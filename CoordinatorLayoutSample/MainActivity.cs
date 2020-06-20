@@ -4,7 +4,7 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
 
-namespace ToolbarSample
+namespace CoordinatorLayoutSample
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -23,18 +23,9 @@ namespace ToolbarSample
             //↓どちらでもOK
             //toolbar.Title = Resources.GetText(Resource.String.toolbar_title);
             toolbar.SetTitle(Resource.String.toolbar_title);
-            //↓これがよくない…？ -> 一旦除外
-            //toolbar.SetTitleTextColor(Color.White);
-            toolbar.SetSubtitle(Resource.String.toolbar_subtitle);            
-            ////書籍では LTGRAY だったが、無いようだ
-            ///↓もなんかダメっぽい -> 一旦除外
-            //toolbar.SetSubtitleTextColor(Color.DarkerGray);
+            toolbar.SetSubtitle(Resource.String.toolbar_subtitle);
             SetSupportActionBar(toolbar);
-
-            //ActionBar.Title = Resources.GetText(Resource.String.toolbar_title);
-            //SupportActionBar.Title = Resources.GetText(Resource.String.toolbar_title);
         }
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
