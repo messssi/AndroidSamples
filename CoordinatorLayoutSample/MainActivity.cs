@@ -3,6 +3,8 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Support.Design.Widget;
+using Android.Graphics;
 
 namespace CoordinatorLayoutSample
 {
@@ -25,6 +27,13 @@ namespace CoordinatorLayoutSample
             toolbar.SetTitle(Resource.String.toolbar_title);
             toolbar.SetSubtitle(Resource.String.toolbar_subtitle);
             SetSupportActionBar(toolbar);
+
+            // CollapsingToolbarLayoutに設定
+            var toolbarLayout = FindViewById<CollapsingToolbarLayout>(Resource.Id.toolbarLayout);
+            toolbarLayout.Title = Resources.GetText(Resource.String.toolbar_title);
+            //引数はintのはずなのだが、なぜかこれでエラーにならないし動く　
+            toolbarLayout.SetExpandedTitleColor(Color.White);
+            toolbarLayout.SetCollapsedTitleTextColor(Color.Gray);
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
