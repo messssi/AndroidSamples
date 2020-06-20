@@ -35,6 +35,7 @@ namespace CoordinatorLayoutSample
             toolbarLayout.SetExpandedTitleColor(Color.White);
             toolbarLayout.SetCollapsedTitleTextColor(Color.Gray);
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
