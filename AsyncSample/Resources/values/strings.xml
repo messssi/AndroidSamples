@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">お天気情報</string>
+    <string name="action_settings">Settings</string>
+	<string name="tv_winfo_title">お天気詳細</string>
+</resources>

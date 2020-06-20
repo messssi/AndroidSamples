@@ -1,0 +1,77 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\iida\\source\\repos\\AndroidSamples\\AsyncSample\\AsyncSample.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\iida\\source\\repos\\AndroidSamples\\AsyncSample\\AsyncSample.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\iida\\source\\repos\\AndroidSamples\\AsyncSample\\AsyncSample.csproj",
+        "projectName": "AsyncSample",
+        "projectPath": "C:\\Users\\iida\\source\\repos\\AndroidSamples\\AsyncSample\\AsyncSample.csproj",
+        "packagesPath": "C:\\Users\\iida\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iida\\source\\repos\\AndroidSamples\\AsyncSample\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\iida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid90"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\iida\\source\\nuget_local_repos": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://i3systems.pkgs.visualstudio.com/_packaging/i3Systems-NuGet-Gallery/nuget/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
+        },
+        "frameworks": {
+          "monoandroid90": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid90": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[106.11.4, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
+            "Xamarin.Android.Support.Core.Utils": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.CustomTabs": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Android.Support.Design": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.Essentials": {
+              "target": "Package",
+              "version": "[1.3.1, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}
