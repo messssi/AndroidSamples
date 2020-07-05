@@ -15,12 +15,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolbarSample", "ToolbarSam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{249DE397-87B4-4E6A-A141-861287AFF713}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatorLayoutSample", "CoordinatorLayoutSample\CoordinatorLayoutSample.csproj", "{01D177CC-0A25-418D-A667-55609989A0B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecyclerViewSample", "RecyclerViewSample\RecyclerViewSample.csproj", "{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +67,12 @@ Global
 		{01D177CC-0A25-418D-A667-55609989A0B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01D177CC-0A25-418D-A667-55609989A0B2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01D177CC-0A25-418D-A667-55609989A0B2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
