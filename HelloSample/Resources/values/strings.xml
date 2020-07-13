@@ -1,0 +1,6 @@
+<resources>
+  <string name="app_name">イベントとリスナサンプル</string>
+  <string name="tv_name">お名前を入力してください</string>
+  <string name="bt_click">表示</string>
+  <string name="bt_clear">クリア</string>
+</resources>

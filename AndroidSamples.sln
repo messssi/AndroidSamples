@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecyclerViewSample", "Recyc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewSample", "ViewSample\ViewSample.csproj", "{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSample", "HelloSample\HelloSample.csproj", "{A30CB474-8343-435D-B0D2-BAF7E34B0B48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,12 @@ Global
 		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A30CB474-8343-435D-B0D2-BAF7E34B0B48}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
