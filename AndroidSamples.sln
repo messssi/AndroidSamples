@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoordinatorLayoutSample", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecyclerViewSample", "RecyclerViewSample\RecyclerViewSample.csproj", "{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewSample", "ViewSample\ViewSample.csproj", "{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,12 @@ Global
 		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6FAD3AE3-97C5-46D1-B278-ECEF0CBB6D9B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20B73CD-FC37-4EC7-BFED-8D88F1FE509A}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
