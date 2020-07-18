@@ -1,0 +1,12 @@
+<resources>
+  <string name="app_name">リスト選択サンプル</string>
+  <string-array name="lv_menu">
+    <item>ドライカレー</item>
+    <item>カツカレー</item>
+    <item>ビーフカレー</item>
+    <item>チキンカレー</item>
+    <item>シーフードカレー</item>
+    <item>キーマカレー</item>
+    <item>グリーンカレー</item>
+  </string-array>
+</resources>
