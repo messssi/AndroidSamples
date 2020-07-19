@@ -18,15 +18,12 @@ namespace ListViewSample2
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            //イベントハンドラ設定
             var lvMenu = this.FindViewById<ListView>(Resource.Id.lv_menu);
-            lvMenu.ItemClick += OnItemClick;
-
             //adaptor生成
             var adaptor = new ArrayAdapter(this.ApplicationContext,
                 Android.Resource.Layout.SimpleListItem1, createListForAdapter());
             lvMenu.Adapter = adaptor;
-            //リストタップのリスナ登録 -> C#だと単にイベントハンドラ追加するだけ
+            //イベントハンドラ設定
             lvMenu.ItemClick += OnItemClick;
         }
 
@@ -54,6 +51,10 @@ namespace ListViewSample2
 
         private void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            //ダイアログ表示
+            var dialogFragment = new OrderConfirmDialogFragment();
+            //tag(第2引数)の使い道がいまいちよく分かっていない…
+            dialogFragment.Show(this.SupportFragmentManager, "OrderConfirmDialogFragment");
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
