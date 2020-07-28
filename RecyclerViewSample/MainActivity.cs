@@ -59,8 +59,8 @@ namespace RecyclerViewSample
             var menuList = CreateMenuList();
 
             // アダプタを生成して諸設定
-            var adaptor = new RecyclerListAdaptor(this.ApplicationContext, menuList);
-            lvMenuList.SetAdapter(adaptor);
+            var adapter = new RecyclerListAdaptor(this.ApplicationContext, menuList);
+            lvMenuList.SetAdapter(adapter);
 
             // 区切り線は手動設定が必要
             var decorator = new DividerItemDecoration(this.ApplicationContext, layout.Orientation);

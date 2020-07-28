@@ -19,10 +19,10 @@ namespace ListViewSample2
             SetContentView(Resource.Layout.activity_main);
 
             var lvMenu = this.FindViewById<ListView>(Resource.Id.lv_menu);
-            //adaptor生成
-            var adaptor = new ArrayAdapter(this.ApplicationContext,
+            //adapter生成
+            var adapter = new ArrayAdapter(this.ApplicationContext,
                 Android.Resource.Layout.SimpleListItem1, createListForAdapter());
-            lvMenu.Adapter = adaptor;
+            lvMenu.Adapter = adapter;
             //イベントハンドラ設定
             lvMenu.ItemClick += OnItemClick;
         }

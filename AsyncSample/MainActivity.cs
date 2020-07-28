@@ -45,12 +45,12 @@ namespace AsyncSample
             //中身のDictionaryをJavaDictionaryにすれば落ちないようになった
             //https://subscription.packtpub.com/book/application_development/9781784398576/4/ch04lvl1sec44/using-a-simpleadapter
             //var cityList = new JavaList<IDictionary<string, object>>()
-            //adaptor生成
+            //adapter生成
             var from = new string[] { FROM_KEY };
             var to = new int[] { Android.Resource.Id.Text1 };
-            var adaptor = new SimpleAdapter(this.ApplicationContext, createCityListForAdapter(),
+            var adapter = new SimpleAdapter(this.ApplicationContext, createCityListForAdapter(),
                 Android.Resource.Layout.SimpleExpandableListItem1, from, to);
-            lvCityList.Adapter = adaptor;
+            lvCityList.Adapter = adapter;
             //リストタップのリスナ登録 -> C#だと単にイベントハンドラ追加するだけらしい
             //https://forums.xamarin.com/discussion/7843/onitemclicklistener-convert-java-to-c
             //lvCityList.OnItemClickListener = 
