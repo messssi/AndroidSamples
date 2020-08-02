@@ -4252,70 +4252,67 @@ namespace MenuSample
 			public const int bottom_sheet_behavior = 2131623977;
 			
 			// aapt resource value: 0x7F0E002A
-			public const int bt_thx_back = 2131623978;
+			public const int character_counter_content_description = 2131623978;
 			
 			// aapt resource value: 0x7F0E002B
-			public const int character_counter_content_description = 2131623979;
+			public const int character_counter_pattern = 2131623979;
 			
 			// aapt resource value: 0x7F0E002C
-			public const int character_counter_pattern = 2131623980;
+			public const int fab_transformation_scrim_behavior = 2131623980;
 			
 			// aapt resource value: 0x7F0E002D
-			public const int fab_transformation_scrim_behavior = 2131623981;
+			public const int fab_transformation_sheet_behavior = 2131623981;
 			
 			// aapt resource value: 0x7F0E002E
-			public const int fab_transformation_sheet_behavior = 2131623982;
+			public const int hide_bottom_view_on_scroll_behavior = 2131623982;
 			
 			// aapt resource value: 0x7F0E002F
-			public const int hide_bottom_view_on_scroll_behavior = 2131623983;
+			public const int menu_list_context_desc = 2131623983;
 			
 			// aapt resource value: 0x7F0E0030
-			public const int menu_list_context_desc = 2131623984;
+			public const int menu_list_context_header = 2131623984;
 			
 			// aapt resource value: 0x7F0E0031
-			public const int menu_list_context_header = 2131623985;
+			public const int menu_list_context_order = 2131623985;
 			
 			// aapt resource value: 0x7F0E0032
-			public const int menu_list_context_order = 2131623986;
+			public const int menu_list_options_curry = 2131623986;
 			
 			// aapt resource value: 0x7F0E0033
-			public const int menu_list_options_curry = 2131623987;
+			public const int menu_list_options_teishoku = 2131623987;
 			
 			// aapt resource value: 0x7F0E0034
-			public const int menu_list_options_teishoku = 2131623988;
+			public const int mtrl_chip_close_icon_content_description = 2131623988;
 			
 			// aapt resource value: 0x7F0E0035
-			public const int mtrl_chip_close_icon_content_description = 2131623989;
+			public const int password_toggle_content_description = 2131623989;
 			
 			// aapt resource value: 0x7F0E0036
-			public const int password_toggle_content_description = 2131623990;
+			public const int path_password_eye = 2131623990;
 			
 			// aapt resource value: 0x7F0E0037
-			public const int path_password_eye = 2131623991;
+			public const int path_password_eye_mask_strike_through = 2131623991;
 			
 			// aapt resource value: 0x7F0E0038
-			public const int path_password_eye_mask_strike_through = 2131623992;
+			public const int path_password_eye_mask_visible = 2131623992;
 			
 			// aapt resource value: 0x7F0E0039
-			public const int path_password_eye_mask_visible = 2131623993;
+			public const int path_password_strike_through = 2131623993;
 			
 			// aapt resource value: 0x7F0E003A
-			public const int path_password_strike_through = 2131623994;
+			public const int search_menu_title = 2131623994;
 			
 			// aapt resource value: 0x7F0E003B
-			public const int search_menu_title = 2131623995;
+			public const int status_bar_notification_info_overflow = 2131623995;
 			
 			// aapt resource value: 0x7F0E003C
-			public const int status_bar_notification_info_overflow = 2131623996;
+			public const int tv_menu_unit = 2131623996;
 			
 			// aapt resource value: 0x7F0E003D
-			public const int tv_menu_unit = 2131623997;
+			public const int tv_thx_desc = 2131623997;
 			
 			// aapt resource value: 0x7F0E003E
-			public const int tv_thx_desc = 2131623998;
-			
-			// aapt resource value: 0x7F0E003F
-			public const int tv_thx_title = 2131623999;
+			public const int tv_thx_title = 2131623998;
 			
 			static String()
 			{

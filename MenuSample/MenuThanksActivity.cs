@@ -7,6 +7,8 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
+using Android.Support.V7.View;
 using Android.Views;
 using Android.Widget;
 using Java.Interop;
@@ -15,7 +17,7 @@ using static MenuSample.Constants;
 namespace MenuSample
 {
     [Activity(Label = "MenuThanksActivity")]
-    public class MenuThanksActivity : Activity
+    public class MenuThanksActivity : AppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,13 +36,27 @@ namespace MenuSample
 
             tvMenuName.Text = name;
             tvMenuPrice.Text = price;
+
+            // 戻るメニュー表示コード
+            // SupportActionBar は AppCompatActivity を継承しないと使えない様子
+            this.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
+
+            // タイトル指定しないと 「MenuThanksActivity」と表示された…
+            this.SupportActionBar.Title = Resources.GetString(Resource.String.app_name);
         }
 
-        [Export(nameof(OnBackButtonClick))]
-        public void OnBackButtonClick(View view)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            // アクティビティを終了することで結果的には戻ることになる
-            this.Finish();
+            // ↓ではない
+            // if (item.ItemId == Resource.Id.home)
+
+            // 戻るメニュー選択時はアクティビティ終了(= 戻る)
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
+                this.Finish();
+            }
+
+            return base.OnOptionsItemSelected(item);
         }
     }
 }
