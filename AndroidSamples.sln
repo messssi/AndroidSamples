@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuSample", "MenuSample\Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragmentSample", "FragmentSample\FragmentSample.csproj", "{F4C65DB7-BDC0-43D7-B089-01CDE086A10C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSample", "DatabaseSample\DatabaseSample.csproj", "{C4AE3B56-3677-48BB-908B-2E509C90E20D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,12 @@ Global
 		{F4C65DB7-BDC0-43D7-B089-01CDE086A10C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4C65DB7-BDC0-43D7-B089-01CDE086A10C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4C65DB7-BDC0-43D7-B089-01CDE086A10C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
