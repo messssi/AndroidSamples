@@ -32,9 +32,6 @@ namespace FragmentSample
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-            
             // 画面をXMLからインフレ―ト
             var view = inflater.Inflate(Resource.Layout.fragment_menu_list, container, false);
             var lvMenu = view.FindViewById<ListView>(Resource.Id.lvMenu);
@@ -49,6 +46,9 @@ namespace FragmentSample
             var adapter = new SimpleAdapter(this.Activity, menuList,
                 Android.Resource.Layout.SimpleListItem2, from, to);
             lvMenu.Adapter = adapter;
+
+            // リスナ登録
+            lvMenu.ItemClick += OnListItemClick;
 
             // インフレートした画面を返す
             return view;
@@ -76,6 +76,25 @@ namespace FragmentSample
                 });
             }
             return menuList;
+        }
+
+        /// <summary>
+        /// リスト表示アイテムクリック時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnListItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //タップされた行のデータ取得
+            var item = e.Parent.GetItemAtPosition(e.Position) as IDictionary<string, object>;
+            var name = item[NAME_KEY] as string;
+            var price = item[PRICE_KEY] as string;
+
+            //インテント生成→画面起動
+            var intent = new Intent(this.Activity, typeof(MenuThanksActivity));
+            intent.PutExtra(NAME_KEY, name);
+            intent.PutExtra(PRICE_KEY, price);
+            this.StartActivity(intent);
         }
     }
 }
