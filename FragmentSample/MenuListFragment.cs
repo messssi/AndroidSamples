@@ -15,6 +15,8 @@ using static FragmentSample.Constants;
 namespace FragmentSample
 {
     /// <summary>
+    /// リスト表示フラグメント
+    /// 
     /// https://soncho.mydns.jp/2019/10/27/fragment%E3%81%AF%E6%97%A7%E5%9E%8B%E5%BC%8F%E3%81%A7%E3%81%99-this-class-is-obsoleted-in-this-android-platform/
     /// Fragmentは旧型式と警告が出る
     /// using Android.App;
@@ -23,6 +25,11 @@ namespace FragmentSample
     /// </summary>
     public class MenuListFragment : Fragment
     {
+        /// <summary>
+        /// 大画面か否か
+        /// </summary>
+        private bool _isLayoutXLarge = true;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -90,11 +97,47 @@ namespace FragmentSample
             var name = item[NAME_KEY] as string;
             var price = item[PRICE_KEY] as string;
 
-            //インテント生成→画面起動
-            var intent = new Intent(this.Activity, typeof(MenuThanksActivity));
-            intent.PutExtra(NAME_KEY, name);
-            intent.PutExtra(PRICE_KEY, price);
-            this.StartActivity(intent);
+            // 引継ぎデータを取りまとめるオブジェクト生成
+            var bundle = new Bundle();
+            bundle.PutString(NAME_KEY, name);
+            bundle.PutString(PRICE_KEY, price);
+
+            // 画面サイズにより処理を分ける
+            if (this._isLayoutXLarge)
+            {
+                //
+                // 大画面：同じアクティビティ内のフラグメントを更新
+                // 
+
+                var transaction = this.FragmentManager?.BeginTransaction();
+                // フラグメント生成→引継ぎデータ格納→置き換え
+                var menuThanksFramgment = new MenuThanksFragment();
+                menuThanksFramgment.Arguments = bundle;
+                transaction?.Replace(Resource.Id.menuThanksFrame, menuThanksFramgment);
+                // トランザクション単位で更新する様子
+                transaction?.Commit();
+            }
+            else
+            {
+                //
+                // 通常画面：別画面起動
+                //
+
+                //インテント生成→画面起動
+                var intent = new Intent(this.Activity, typeof(MenuThanksActivity));
+                intent.PutExtra(NAME_KEY, name);
+                intent.PutExtra(PRICE_KEY, price);
+                this.StartActivity(intent);
+            }
+        }
+
+        public override void OnActivityCreated(Bundle savedInstanceState)
+        {
+            base.OnActivityCreated(savedInstanceState);
+
+            // 所属アクティビティにmenuThanksFrame が存在する = 大画面 と判断する
+            var menuThanksFrame = this.Activity?.FindViewById<View>(Resource.Id.menuThanksFrame);
+            this._isLayoutXLarge = menuThanksFrame != null;
         }
     }
 }
