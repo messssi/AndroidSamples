@@ -38,6 +38,26 @@ namespace MediaSample
             {
                 Log.Error("MediaSample", "メディアプレーヤー準備時の例外発生", ex);
             }
+
+            // スイッチのリスナ設定
+            var loopSwitch = this.FindViewById<Switch>(Resource.Id.swLoop);
+            loopSwitch.CheckedChange += OnLoopSwitchCheckedChanged;
+        }
+
+        /// <summary>
+        /// ループスイッチチェック切り替わり時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnLoopSwitchCheckedChanged(object sender, CompoundButton.CheckedChangeEventArgs e)
+        {
+            // ↓は残念ながらコンパイルエラーになった
+            // this._player?.Looping = e.IsChecked;
+            if (this._player == null)
+            {
+                return;
+            }
+            this._player.Looping = e.IsChecked;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -63,8 +83,16 @@ namespace MediaSample
 
         public void OnCompletion(MediaPlayer mp)
         {
-            var btPlay = this.FindViewById<Button>(Resource.Id.btPlay);
-            btPlay.Text = this.Resources.GetString(Resource.String.bt_play_play);
+            if (this._player == null)
+            {
+                return;
+            }
+            if (!this._player.Looping)
+            {
+                // 再生ボタンの表示テキスト更新
+                var btPlay = this.FindViewById<Button>(Resource.Id.btPlay);
+                btPlay.Text = this.Resources.GetString(Resource.String.bt_play_play);
+            }
         }
 
         /// <summary>
