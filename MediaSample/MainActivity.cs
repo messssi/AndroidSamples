@@ -114,23 +114,36 @@ namespace MediaSample
         }
 
         /// <summary>
+        /// 戻るボタンクリック時の処理
+        /// </summary>
+        /// <param name="view"></param>
+        [Export(nameof(OnBackButtonClick))]
+        public void OnBackButtonClick(View view)
+        {
+            _player?.SeekTo(0);
+        }
+
+        /// <summary>
         /// 進むボタンクリック時の処理
         /// </summary>
         /// <param name="view"></param>
         [Export(nameof(OnForwardButtonClick))]
         public void OnForwardButtonClick(View view)
         {
-            ////キーワード文字列取得→URLエンコード
-            //var etSearchWord = this.FindViewById<EditText>(Resource.Id.etSearchWord);
-            //var searchWord = etSearchWord.Text.ToString();
-            //searchWord = URLEncoder.Encode(searchWord, "UTF-8");
+            if (this._player == null)
+            {
+                return;
+            }
 
-            ////地図アプリと連携するURIオブジェクトをインテントに渡す
-            //var uriStr = $"geo:0,0?q={searchWord}";
-            //var uri = Android.Net.Uri.Parse(uriStr);
-            ////第1引数のEnumがアクション種別を表している。ActionViewは画面表示。
-            //var intent = new Intent(Intent.ActionView, uri);
-            //this.StartActivity(intent);
+            // Kotlin の let 風に使うならこうなるのかな…？と思ったけど、using使うとDisposeされちゃうからダメだな
+            // 単純に変数代入でいいか…
+            var it = this._player;
+            var duration = it.Duration;
+            it.SeekTo(duration);
+            if (!it.IsPlaying)
+            {
+                it.Start();
+            }
         }
     }
 }
