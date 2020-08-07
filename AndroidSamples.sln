@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FragmentSample", "FragmentS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSample", "DatabaseSample\DatabaseSample.csproj", "{C4AE3B56-3677-48BB-908B-2E509C90E20D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaSample", "MediaSample\MediaSample.csproj", "{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,12 @@ Global
 		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4AE3B56-3677-48BB-908B-2E509C90E20D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBC53C0-0D2E-4F0E-A7DC-F38F074CF3DD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
