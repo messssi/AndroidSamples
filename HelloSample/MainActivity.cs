@@ -29,6 +29,10 @@ namespace HelloSample
 
             var btClear = this.FindViewById<Button>(Resource.Id.btClear);
             btClear.SetOnClickListener(this);
+
+            //// 参考：SetOnClickListenerの代わりに、以下のように個別にイベントハンドラを設定しても動く
+            // btClick.Click += BtClick_Click;
+            // btClear.Click += BtClear_Click;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -36,6 +40,33 @@ namespace HelloSample
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        /// <summary>
+        /// (参考実装)表示ボタンクリック時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtClick_Click(object sender, System.EventArgs e)
+        {
+            var input = this.FindViewById<EditText>(Resource.Id.etName);
+            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
+
+            output.Text = input?.Text.ToString() + OUTPUT_SUFFIX;
+        }
+
+        /// <summary>
+        /// (参考実装)クリアボタンクリック時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtClear_Click(object sender, System.EventArgs e)
+        {
+            var input = this.FindViewById<EditText>(Resource.Id.etName);
+            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
+
+            input.Text = "";
+            output.Text = "";
         }
 
         /// <summary>
