@@ -20,9 +20,8 @@ namespace CoordinatorLayoutSample
 
             //ツールバー設定
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            //このロゴ設定はちゃんと効く
             toolbar.SetLogo(Resource.Mipmap.ic_launcher);
-            //↓どちらでもOK
+            //タイトル設定は↓どちらでもOK
             //toolbar.Title = Resources.GetText(Resource.String.toolbar_title);
             toolbar.SetTitle(Resource.String.toolbar_title);
             toolbar.SetSubtitle(Resource.String.toolbar_subtitle);
@@ -31,7 +30,7 @@ namespace CoordinatorLayoutSample
             // CollapsingToolbarLayoutに設定
             var toolbarLayout = FindViewById<CollapsingToolbarLayout>(Resource.Id.toolbarLayout);
             toolbarLayout.Title = Resources.GetText(Resource.String.toolbar_title);
-            //引数はintのはずなのだが、なぜかこれでエラーにならないし動く　
+            //引数はintのはずなのだが、なぜか↓でコンパイルエラーにならないし動く　
             toolbarLayout.SetExpandedTitleColor(Color.White);
             toolbarLayout.SetCollapsedTitleTextColor(Color.Gray);
         }
