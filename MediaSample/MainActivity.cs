@@ -163,7 +163,7 @@ namespace MediaSample
                 return;
             }
 
-            // Kotlin の let 風に使うならこうなるのかな…？と思ったけど、using使うとDisposeされちゃうからダメだな
+            // Kotlin の let 風に使うならusingかな…？と思ったけど、using使うとDisposeされちゃうからダメだな
             // 単純に変数代入でいいか…
             var it = this._player;
             var duration = it.Duration;

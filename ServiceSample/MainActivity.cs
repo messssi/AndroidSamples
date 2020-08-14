@@ -19,7 +19,7 @@ namespace ServiceSample
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            //イベントハンドラ設定(XML側に定義するやり方がなんかうまくいかない…)
+            //イベントハンドラ設定(XML側に定義するやり方がなんかうまくいかない…→イベントハンドラメソッドにExportタグ追加、Mono.Android.Exportを参照追加と後で知った
             var btPlay = this.FindViewById<Button>(Resource.Id.btPlay);
             var btStop = this.FindViewById<Button>(Resource.Id.btStop);
             btPlay.Click += onPlayButtonClick;
@@ -45,7 +45,6 @@ namespace ServiceSample
         /// 再生ボタンクリック時の処理
         /// </summary>
         public void onPlayButtonClick(object sender, EventArgs e)
-        //public void onPlayButtonClick(View v)
         {
             //呼び出し方の参考
             //http://furuya02.hatenablog.com/entry/20140503/1399767382
@@ -62,7 +61,6 @@ namespace ServiceSample
         /// 停止ボタンクリック時の処理
         /// </summary>
         public void onStopButtonClick(object sender, EventArgs e)
-        //public void onStopButtonClick(View v)
         {
             var intent = new Intent(ApplicationContext, typeof(SoundManageService));
             this.StopService(intent);

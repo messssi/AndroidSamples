@@ -46,11 +46,12 @@ namespace CameraIntentSample
                 //https://qiita.com/amay077/items/8752e7e5db233f5cc73f
                 //GetParcelableExtra の使い方はAndroid本家とちょっと違う
                 //var bitmap = data?.GetParcelableExtra<Bitmap>("data");
-                //こっちが正しい。ただし、こうして取得できるBitMapは非常に小さいものしか取得できない
-                // →一旦保存したものを使うようにする
+                //↑はNG、↓が正しい
                 //var bitmap = data?.GetParcelableExtra("data") as Bitmap;
-                var ivCamera = this.FindViewById<ImageView>(Resource.Id.ivCamera);
+                // ただし、こうして取得できるBitMapは非常に小さいものしか取得できない
+                // →一旦保存したものを使うようにする
 
+                var ivCamera = this.FindViewById<ImageView>(Resource.Id.ivCamera);
                 //ivCamera.SetImageBitmap(bitmap);
                 ivCamera.SetImageURI(this._imageUri);
             }

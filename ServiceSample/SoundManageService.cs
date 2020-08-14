@@ -95,10 +95,6 @@ namespace ServiceSample
                 if (_player != null)
                 {
                     _player.Completion += OnPlayerCompletion;
-                    //_player.Completion += (_, __) =>
-                    //{
-                    //    this.StopSelf();
-                    //};
                 }
                 // メディア再生準備
                 _player?.PrepareAsync();
@@ -113,7 +109,6 @@ namespace ServiceSample
             }
             //定数を返す(XamarinだとEnumになってた)
             return StartCommandResult.NotSticky;
-            //return base.OnStartCommand(intent, flags, startId);
         }
 
         private void OnPlayerCompletion(object sender, EventArgs e)
@@ -130,10 +125,6 @@ namespace ServiceSample
                 .SetContentText(Resources.GetText(Resource.String.msg_notification_text_finish));
             // 通知
             Notify(builder, 0);
-            //// 通知する
-            //var notification = builder.Build();
-            //var manager = this.GetSystemService(Context.NotificationService) as NotificationManager;
-            //manager.Notify(0, notification);
 
             // サービスを止める
             this.StopSelf();
@@ -153,7 +144,6 @@ namespace ServiceSample
             target.Release();
             //インスタンス変数にもセットしておく
             _player = null;
-            //base.OnDestroy();
         }
 
         public void OnPrepared(MediaPlayer mp)
