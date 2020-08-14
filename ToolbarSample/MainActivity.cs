@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Android.Graphics;
 
 namespace ToolbarSample
 {
@@ -23,12 +24,13 @@ namespace ToolbarSample
             //↓どちらでもOK
             //toolbar.Title = Resources.GetText(Resource.String.toolbar_title);
             toolbar.SetTitle(Resource.String.toolbar_title);
-            //↓これがよくない…？ -> 一旦除外
-            //toolbar.SetTitleTextColor(Color.White);
-            toolbar.SetSubtitle(Resource.String.toolbar_subtitle);            
-            ////書籍では LTGRAY だったが、無いようだ
-            ///↓もなんかダメっぽい -> 一旦除外
-            //toolbar.SetSubtitleTextColor(Color.DarkerGray);
+            // 当初色指定がうまくいかなかったのはSystem.Drawing.Colorを使っていたせい。   
+            // Android.Graphics.Colorを使えばOK
+            toolbar.SetTitleTextColor(Color.White);
+            toolbar.SetSubtitle(Resource.String.toolbar_subtitle);
+            //書籍では LTGRAY だったが、無いようだ
+            //Android.Graphics.Colorを使えばOKのようだ
+            toolbar.SetSubtitleTextColor(Color.LightGray);
             SetSupportActionBar(toolbar);
 
             //ActionBar.Title = Resources.GetText(Resource.String.toolbar_title);
