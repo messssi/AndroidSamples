@@ -126,6 +126,14 @@ namespace RecyclerViewSample
             /// </summary>
             Context _context { get; set; }
 
+            public override int ItemCount
+            {
+                get
+                {
+                    return _listData.Count;
+                }
+            }
+
             /// <summary>
             /// コンストラクタ
             /// </summary>
@@ -193,14 +201,6 @@ namespace RecyclerViewSample
                 //// https://sodocumentation.net/ja/xamarin-android/topic/3452/recyclerview
                 //holder.ItemView.Click -= OnViewClick;
                 //holder.ItemView.Click += OnViewClick;
-            }
-
-            public override int ItemCount
-            {
-                get
-                {
-                    return _listData.Count;
-                }
             }
         }
     }
