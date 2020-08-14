@@ -19,7 +19,6 @@ namespace HelloSample
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
@@ -33,40 +32,6 @@ namespace HelloSample
             //// 参考：SetOnClickListenerの代わりに、以下のように個別にイベントハンドラを設定しても動く
             // btClick.Click += BtClick_Click;
             // btClear.Click += BtClear_Click;
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-
-        /// <summary>
-        /// (参考実装)表示ボタンクリック時の処理
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtClick_Click(object sender, System.EventArgs e)
-        {
-            var input = this.FindViewById<EditText>(Resource.Id.etName);
-            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
-
-            output.Text = input?.Text.ToString() + OUTPUT_SUFFIX;
-        }
-
-        /// <summary>
-        /// (参考実装)クリアボタンクリック時の処理
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BtClear_Click(object sender, System.EventArgs e)
-        {
-            var input = this.FindViewById<EditText>(Resource.Id.etName);
-            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
-
-            input.Text = "";
-            output.Text = "";
         }
 
         /// <summary>
@@ -98,6 +63,33 @@ namespace HelloSample
                 default:
                     break;
             }
+        }
+
+        /// <summary>
+        /// (参考実装)表示ボタンクリック時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtClick_Click(object sender, System.EventArgs e)
+        {
+            var input = this.FindViewById<EditText>(Resource.Id.etName);
+            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
+
+            output.Text = input?.Text.ToString() + OUTPUT_SUFFIX;
+        }
+
+        /// <summary>
+        /// (参考実装)クリアボタンクリック時の処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtClear_Click(object sender, System.EventArgs e)
+        {
+            var input = this.FindViewById<EditText>(Resource.Id.etName);
+            var output = this.FindViewById<TextView>(Resource.Id.tvOutput);
+
+            input.Text = "";
+            output.Text = "";
         }
     }
 }
