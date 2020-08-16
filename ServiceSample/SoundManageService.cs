@@ -19,6 +19,11 @@ using Java.Net;
 
 namespace ServiceSample
 {
+    /// <summary>
+    /// 注：現状、Oreo以上のバージョンの場合1分までしか再生できない
+    /// 以下辺り参考にすれば対応できる…かもしれない
+    /// https://teratail.com/questions/167858
+    /// </summary>
     [Service]
     public class SoundManageService : Service, MediaPlayer.IOnPreparedListener
     {
@@ -73,11 +78,16 @@ namespace ServiceSample
         /// <param name="flags"></param>
         /// <param name="startId"></param>
         /// <returns></returns>
-        [return: GeneratedEnum]
-        public override StartCommandResult OnStartCommand(Intent intent, [GeneratedEnum] StartCommandFlags flags, int startId)
+        public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
+            //// Oreo対応
+            //if (Build.VERSION.SdkInt >= BuildVersionCodes.O)
+            //{
+            //    this.RegisterForegroundService();
+            //}
+
             // 音声ファイルのURI文字列を作成
-            var mediaFileUriStr = $"android.resource://{PackageName}/{Resource.Raw.jungle}";
+            var mediaFileUriStr = $"android.resource://{PackageName}/{Resource.Raw.wakareno}";
             // URIオブジェクト生成
             var mediaFileUri = Android.Net.Uri.Parse(mediaFileUriStr);
             try
@@ -110,6 +120,21 @@ namespace ServiceSample
             //定数を返す(XamarinだとEnumになってた)
             return StartCommandResult.NotSticky;
         }
+
+        /// https://teratail.com/questions/167858
+        /// まだうまく動いてない…
+        //void RegisterForegroundService()
+        //{
+        //    var notification = new Notification.Builder(this)
+        //                            .SetContentTitle("アプリ")
+        //                            .SetContentText("Start ForegroundService")
+        //                            .SetSmallIcon(Resource.Mipmap.ic_launcher_foreground) // Android7.0対応
+        //                            .SetColor(ActivityCompat.GetColor(Android.App.Application.Context, Android.Resource.Color.HoloRedDark)) // Android7.0対応
+        //                            .SetOngoing(true)
+        //                            .Build();
+
+        //    this.StartForeground(99999, notification);
+        //}
 
         private void OnPlayerCompletion(object sender, EventArgs e)
         {
