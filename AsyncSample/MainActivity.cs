@@ -16,8 +16,6 @@ namespace AsyncSample
 {
     /// <summary>
     /// 非同期でお天気情報を取ってきて表示するサンプル
-    /// https://wings.msn.to/index.php/-/A-03/978-4-7981-6044-3
-    /// ↑の11章をXamarin.Android に翻訳しながら進めた。所要時間約3時間…
     /// </summary>
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
@@ -65,15 +63,14 @@ namespace AsyncSample
         {
             var data = new List<(string name, string id)>()
             {
-                ("大阪", "270000"),
-                ("神戸", "280010"),
-                ("豊岡", "280020"),
-                ("京都", "260010"),
-                ("舞鶴", "260020"),
-                ("奈良", "290010"),
-                ("風屋", "290020"),
-                ("和歌山", "300010"),
-                ("潮岬", "300020"),
+                // Livedoor天気終了に伴いIDも変更
+                ("大阪", "1853909"),
+                ("神戸", "1859171"),
+                ("豊岡", "1849831"),
+                ("京都", "1857910"),
+                ("舞鶴", "1857766"),
+                ("奈良", "1855612"),
+                ("和歌山", "1926004"),
             };
             var cityList = new List<IDictionary<string, object>>();
             foreach (var d in data)
@@ -99,66 +96,10 @@ namespace AsyncSample
             var tvCityName = this.FindViewById(Resource.Id.tvCityName) as TextView;
             tvCityName.Text = $"{cityName}の天気：";
 
-            //情報更新
-            Task.Run(() => UpdateWeatherInfo(cityId));
-        }
-
-        private class WeatherInfo
-        {
-            public string Telop { get; set; }
-            public string Desc { get; set; }
-        }
-
-        private async Task UpdateWeatherInfo(string cityId)
-        {
-            //情報取得
-            var info = FetchWeatherInfo(cityId);
-            
-            var tvWeatherTelop = this.FindViewById<TextView>(Resource.Id.tvWeatherTelop);
-            var tvWeatherDesc = this.FindViewById<TextView>(Resource.Id.tvWeatherDesc);
-            //tvWeatherTelop.Text = info.Telop;
-            //tvWeatherDesc.Text = info.Desc;
-            //Viewに反映(UIスレッド呼ばないとダメ)
-            //https://docs.microsoft.com/ja-jp/xamarin/android/app-fundamentals/writing-responsive-apps
-            this.RunOnUiThread(() =>
-            {
-                tvWeatherTelop.Text = info.Telop;
-                tvWeatherDesc.Text = info.Desc;
-            });
-        }
-
-        /// <summary>
-        /// https://qiita.com/ronkabu/items/997c4eee40e4668951a1
-        /// </summary>
-        static RestSharp.RestClient client = new RestSharp.RestClient("http://weather.livedoor.com/forecast/webservice/json/v1");
-
-        private WeatherInfo FetchWeatherInfo(string cityId)
-        {
-            //string urlStr = $"http://weather.livedoor.com/forecast/webservice/json/v1?city={cityId}";
-            //// HttpClientの作成 
-            //var httpClient = new HttpClient();
-            //// 非同期でAPIからデータを取得
-            //Task<string> stringAsync = httpClient.GetStringAsync(urlStr);
-            //string result = await stringAsync;
-            //// JSON形式のデータをデシリアライズ
-
-            var request = new RestSharp.RestRequest();
-            request.AddQueryParameter("city", cityId);
-            request.RequestFormat = RestSharp.DataFormat.Json;
-            var response = client.Execute<LDTenki>(request);
-            var tenki = JsonConvert.DeserializeObject<LDTenki>(response.Content);
-            return new WeatherInfo()
-            {
-                Telop = tenki.forecasts.FirstOrDefault()?.telop,
-                Desc = tenki.description?.text,
-            };
-        }
-
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            //WeatherInfoReceiverインスタンスを生成。
+            var receiver = new OpenWeatherMapInfoReceiver(this);
+            //WeatherInfoReceiverを実行。
+            receiver.Execute(cityId);
         }
     }
 }
