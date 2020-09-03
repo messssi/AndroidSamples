@@ -84,7 +84,6 @@ namespace AsyncSample
             return cityList;
         }
 
-        //private void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
         private void OnItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             //タップされた行の都市名とID取得
@@ -96,10 +95,16 @@ namespace AsyncSample
             var tvCityName = this.FindViewById(Resource.Id.tvCityName) as TextView;
             tvCityName.Text = $"{cityName}の天気：";
 
+            // AsyncTaskを使うサンプル
             //WeatherInfoReceiverインスタンスを生成。
             var receiver = new OpenWeatherMapInfoReceiver(this);
             //WeatherInfoReceiverを実行。
             receiver.Execute(cityId);
+
+            // AsyncTaskを使わないサンプル
+            ////↓試しにAsyncTaskを使わずに通常のTask.Runを試してみた。問題なく動く様子
+            //var receiver = new OpenWeatherMapInfoReceiver2(this);
+            //Task.Run(() => receiver.UpdateWeatherInfo(cityId));
         }
     }
 }

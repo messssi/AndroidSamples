@@ -13,6 +13,10 @@ using Java.Net;
 
 namespace AsyncSample
 {
+    /// <summary>
+    /// OpenWeatherMapから情報を取得して画目更新するクラス
+    /// …の、AsyncTaskを継承する版(書籍のC#翻訳版)
+    /// </summary>
     public class OpenWeatherMapInfoReceiver : AsyncTask<String, String, String>
     {
         Activity _activity = null;
@@ -100,6 +104,5 @@ namespace AsyncSample
             tvWeatherTelop.Text = telop;
             tvWeatherDesc.Text = desc;
         }
-
     }
 }
