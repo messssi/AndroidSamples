@@ -204,23 +204,23 @@ namespace ServiceSample
             manager.Notify(id, notification);
         }
 
-        /// <summary>
-        /// 再生準備完了時のリスナ
-        /// 
-        /// Java.Lang.Object継承についての参考：
-        /// https://stackoverflow.com/questions/61129398/how-to-set-the-volume-to-0-in-xamarin-native-video-player
-        /// </summary>
-        private class PlayerPreparedListener : Java.Lang.Object, MediaPlayer.IOnPreparedListener
-        {
-            public void OnPrepared(MediaPlayer mp)
-            {
-                //メディア再生
-                mp.Start();
+        ///// <summary>
+        ///// 再生準備完了時のリスナ
+        ///// 
+        ///// Java.Lang.Object継承についての参考：
+        ///// https://stackoverflow.com/questions/61129398/how-to-set-the-volume-to-0-in-xamarin-native-video-player
+        ///// </summary>
+        //private class PlayerPreparedListener : Java.Lang.Object, MediaPlayer.IOnPreparedListener
+        //{
+        //    public void OnPrepared(MediaPlayer mp)
+        //    {
+        //        //メディア再生
+        //        mp.Start();
 
-                ////再生開始通知の処理
-                //var builder = NotificationCompat.Builder(applicationcon)
-            }
-        }
+        //        ////再生開始通知の処理
+        //        //var builder = NotificationCompat.Builder(applicationcon)
+        //    }
+        //}
 
         //XamarinというかC#では使わなくてもよかった
         ///// <summary>
